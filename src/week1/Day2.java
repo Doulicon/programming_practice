@@ -2,7 +2,7 @@ package week1;
 
 /**
  * @author fengyongquan
- * @description 快速排序和插入排序
+ * @description 插入排序
  * @date 2020/8/25
  */
 public class Day2 {
@@ -28,7 +28,6 @@ public class Day2 {
             //把当前元素拿出来
             int temp = arr[i];
             while (preIndex>=0&&temp<arr[preIndex]){
-                System.out.println(arr[1]);
                 //后面等于前面
                 arr[preIndex + 1] = arr[preIndex];
                 preIndex--;
