@@ -12,9 +12,15 @@ import java.util.Map;
 public class Day5 {
 
     public static void main(String[] args) throws IOException {
-        test2();
+        testFileInput();
     }
-    //读取文本，获取每个字符的个数
+    /**读取文本，获取每个字符的个数
+     * 原理：创建字符流
+     * 创建集合
+     * 创建文件，用流读取文件
+     * 遍历字符，将字符作为key，value作为出现个数
+     * 遍历后放到map中
+     * */
     public static void test() throws IOException {
         FileReader fr = null;
         BufferedWriter bufferedWriter = null;
@@ -125,7 +131,6 @@ public class Day5 {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-
             if (bufferedWriter != null) {
 
                 try {
@@ -156,8 +161,10 @@ public class Day5 {
         //读数据
         byte [] buffer = new byte[10];
         int len;
+        //
         while (( len = fileInputStream.read(buffer))!=-1){
             String str = new String(buffer,0,len);
+            //每次读10次打印
             //中文会乱码，最好用字符流来用
             System.out.println(str);
         }
